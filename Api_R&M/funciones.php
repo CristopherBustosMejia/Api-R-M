@@ -34,13 +34,17 @@
         <img src='".$pic."' class='card-img-top' alt='...'>
         <div class='card-body'>
           <h5 class='card-title'>".$name."</h5>
-          <a href='https://rickandmortyapi.com/api/character/".$id."' class='card-link'>Mas info...</a>
+          <a href='infoPersonaje.php?id=".$id."' class='card-link'>Mas info...</a>
         </div>
       </div>
       </div>";
     }
-    function randomCharacter(){
-        
+    function randomCharacter($cardNum){
+        for($i=0;$i<$cardNum;$i++){
+            $random = rand(1,671);
+            $character = consultAPI("https://rickandmortyapi.com/api/character/".$random);
+            createCard($character->name,$character->image,$character->id);
+        }
     }
     function createHeader(){
         echo"<body>
@@ -89,5 +93,15 @@
             </div>
         </div>
     </footer>";
+    }
+    function characterDetails($id){
+        $character = consultAPI("https://rickandmortyapi.com/api/character/".$id);
+        echo"<p class='fs-5'>".$character->name."</p>
+        <img src='".$character->image."' alt=''>
+        <p>Estado: ".$character->status."</p>
+        <p>Especie: ".$character->species."</p>
+        <p>Genero: ".$character->gender."</p>
+        <p>Origen: ".$character->origin->name."</p>
+        <p>Ubicacion: ".$character->location->name."</p>";
     }
 ?>

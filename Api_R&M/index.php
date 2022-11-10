@@ -7,6 +7,16 @@
 ?>
 <div class="container justify-content-center">
     <div class="row">
+        <p class="fs-3">
+            Hola, soy Cristopher Bustos Mejia, estudiante de Ingenieria en Software de la Universidad Politecnica de Tecamac.
+        </p>
+        <p>
+            Este proyecto fue realizado para la materia de Programacion Web, en el cual se utilizo la API de Rick and Morty.
+            <br>
+            Estos son los personajes del episodio 1 de la temporada 1:
+        </p>
+    </div>
+    <div class="row">
         <?php
             $episode = getCharacterByEpisode(1);
             foreach($episode->characters as $link){
