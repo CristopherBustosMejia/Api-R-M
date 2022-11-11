@@ -1,6 +1,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="estilo.css">
 <?php 
     require("funciones.php");
     createHeader();
@@ -13,7 +13,7 @@
 <div class="container justify-content-center" >
     <div class="row">
     <?php
-        getCharacters($counter);
+        $characters = getCharacters($counter);
         ?>
     </div>
     <div class="row justify-content-center" >
@@ -21,12 +21,14 @@
             if($counter > 1){
                 $back = $counter-2;
                 echo"<form class='col-auto ' action='personajes.php' method='get'>
-                        <input type='submit' name='counter' value='$back'>
+                <input type='text' style='display:none' name='counter' value='$back'>
+                <input class='boton' type='submit' value='<-'>
                 </form>";
             }
-            if($counter < 42){
+            if($counter < $characters->info->pages){
                 echo"<form class='col-auto' action='personajes.php' method='get'>
-                    <input type='submit' name='counter' value='$counter'>
+                <input type='text' style='display:none' name='counter' value='$counter'>
+                <input class='boton' type='submit' value='->'>
                 </form>";
             }
         ?>

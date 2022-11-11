@@ -1,0 +1,35 @@
+body{
+    background:rgb(59, 55, 55);
+    color: white;
+    margin: 0;
+    box-sizing: border-box;
+}
+.color{
+    box-shadow: 0 16px 30px red;
+}
+.navbar{
+    background: #790909;
+}
+.nav{
+    list-style: none;
+    text-decoration: none;
+    margin-left: 10px;
+    color:white;
+}
+.episodeText{
+    font-family:'Perpetua Titling MT';
+}
+.boton{
+    border-radius: 15px;
+    font-size: 2rem;
+    background: black;
+    color: red;
+    border-style: solid;   
+    border-color: red;
+    text-align: center;
+}
+.boton:hover{
+    background: rgb(4, 21, 167);
+    color: white;
+    border-color: white;
+}
